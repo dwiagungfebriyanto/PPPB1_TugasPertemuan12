@@ -34,8 +34,10 @@ class ContactAdapter(private var listContact: List<Contact>, private val onClick
                 }
 
                 // Menyembunyikan divider untuk item terakhir dalam daftar
-                if (listContact.indexOf(data) == listContact.size - 1) {
+                if (adapterPosition == listContact.size - 1) {
                     divider.visibility = View.GONE
+                } else {
+                    divider.visibility = View.VISIBLE
                 }
             }
         }

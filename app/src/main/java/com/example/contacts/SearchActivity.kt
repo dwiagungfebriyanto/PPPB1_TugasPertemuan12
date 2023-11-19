@@ -1,11 +1,13 @@
 package com.example.contacts
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contacts.data.ContactDao
 import com.example.contacts.data.ContactRoomDatabase
@@ -57,6 +59,9 @@ class SearchActivity : AppCompatActivity() {
                     updateSearchResults(s.toString())
                 }
             })
+
+            // Meminta fokus pada EditText agar keyboard muncul otomatis
+            edtSearch.requestFocus()
 
             btnBack.setOnClickListener {
                 onBackPressed()

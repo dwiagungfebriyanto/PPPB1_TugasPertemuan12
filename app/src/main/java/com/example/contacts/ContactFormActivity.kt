@@ -64,11 +64,6 @@ class ContactFormActivity : AppCompatActivity() {
                         )
                         // Menyimpan kontak baru ke database
                         insert(newContact)
-                        // Beralih ke activity DetailContactActivity untuk menampilkan detail kontak baru
-                        startActivity(
-                            Intent(this@ContactFormActivity, ContactDetailActivity::class.java)
-                                .putExtra("contact", newContact)
-                        )
                         // Menutup activity FormContactActivity
                         finish()
                     } else {
